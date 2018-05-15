@@ -23,6 +23,10 @@
 
 ## Try it out with Docker
 
+1.  Install [Docker](https://docs.docker.com/install/)
+2.  Install [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Download/)
+3.  Run the following:
+
 ```sh
 docker pull mycroftai/docker-mycroft
 
