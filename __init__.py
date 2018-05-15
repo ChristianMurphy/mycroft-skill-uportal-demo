@@ -10,11 +10,11 @@ class uPortalDemoSkill(MycroftSkill):
     def request_menu_intent(self, message):
         self.speak_dialog("todays.specials", data={"specials": "garden vegetable soup and grilled salmon salad"})
 
-    @intent_handler(IntentBuilder("").require("RequestAssignment").require("Assignments").optionally('TimeSpan'))
-    def request_menu_intent(self, message):
+    @intent_handler(IntentBuilder("").require("RequestAssignment").require("Assignments").optionally("TimeSpan"))
+    def request_assignment_intent(self, message):
         self.speak_dialog("due.soon", data={
-            "timespan": message.data['TimeSpan'],
-            "type": message.data['Assignments'],
+            "timespan": "today",
+            "type": "assignments",
             "assignments": "Literature review of Macbeth Act 1, Biology Lab 4, Mathematics chapter 14 assessment"
         })
 
