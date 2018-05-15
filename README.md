@@ -4,9 +4,22 @@
 
 ## Examples
 
+> My Mycroft
+
 * "What's due today?"
 * "What's for lunch?"
+
+## Coming Soon
+
+> Hey Mycroft
+
 * "What classes do I have today?"
+* "When is registration?"
+* "What bills are coming up?"
+  * Requires passphrase
+* "When is the next campus bus leaving?"
+* "What events are coming up?"
+* "What's the news?"
 
 ## Try it out with Docker
 
