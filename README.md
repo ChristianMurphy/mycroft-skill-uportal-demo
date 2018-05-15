@@ -4,7 +4,7 @@
 
 ## Examples
 
-> My Mycroft
+> Hey Mycroft
 
 * "What's due today?"
 * "What's for lunch?"
