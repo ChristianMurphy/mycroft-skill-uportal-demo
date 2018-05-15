@@ -5,19 +5,18 @@ from mycroft.util.log import LOG
 class uPortalDemoSkill(MycroftSkill):
     def __init__(self):
         super(uPortalDemoSkill, self).__init__(name="uPortalDemoSkill")
-        self.count = 0
 
-    @intent_handler(IntentBuilder("").require("Hello").require("World"))
-    def handle_hello_world_intent(self, message):
-        self.speak_dialog("hello.world")
+    @intent_handler(IntentBuilder("").require("RequestMeal").require("Meals").optionally("TimeSpan"))
+    def request_menu_intent(self, message):
+        self.speak_dialog("todays.specials", data={"specials": "garden vegetable soup and grilled salmon salad"})
 
-    @intent_handler(IntentBuilder("").require("Count").require("Dir"))
-    def handle_count_intent(self, message):
-        if message.data["Dir"] == "up":
-            self.count += 1
-        else:  # assume "down"
-            self.count -= 1
-        self.speak_dialog("count.is.now", data={"count": self.count})
+    @intent_handler(IntentBuilder("").require("RequestAssignment").require("Assignments").optionally('TimeSpan'))
+    def request_menu_intent(self, message):
+        self.speak_dialog("due.soon", data={
+            "timespan": message.data['TimeSpan'],
+            "type": message.data['Assignments'],
+            "assignments": "Literature review of Macbeth Act 1, Biology Lab 4, Mathematics chapter 14 assessment"
+        })
 
 def create_skill():
     return uPortalDemoSkill()
