@@ -22,7 +22,15 @@ class uPortalDemoSkill(MycroftSkill):
     def request_course_schedule_intent(self, message):
         self.speak_dialog("schedule", data={
             "timespan": "today",
-            "courses": "Biology Lab at 11 in the morning then in the afternoon Mathematics at 2 and Literature at 4"
+            "courses": "Biology Lab at 11 in the morning, then in the afternoon Mathematics at 2 and Literature at 4"
+        })
+
+    @intent_handler(IntentBuilder("").require("RequestRegistration").require("Registration").optionally("RangeQualifier"))
+    def request_course_registration_intent(self, message):
+        self.speak_dialog("register", data={
+            "term": "Fall",
+            "startDate": "Friday, June one",
+            "endDate": "Wednesday, August one"
         })
 
 def create_skill():
