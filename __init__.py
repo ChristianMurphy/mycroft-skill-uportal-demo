@@ -22,7 +22,7 @@ class uPortalDemoSkill(MycroftSkill):
     def request_course_schedule_intent(self, message):
         self.speak_dialog("schedule", data={
             "timespan": "today",
-            "courses": "this morning Biology Lab at 11, this afternoon Mathematics at 2 and Literature at 4"
+            "courses": "Biology Lab at 11 in the morning then in the afternoon Mathematics at 2 and Literature at 4"
         })
 
 def create_skill():
